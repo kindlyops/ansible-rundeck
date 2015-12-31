@@ -43,7 +43,7 @@
   lineinfile: >
     dest=/etc/rundeck/rundeck-config.properties
     regexp="^dataSource.url"
-    line="dataSource.url=jdbc:mysql://{{ rundeck_database_host }}:{{ rundeck_database_port }}/{{ rundeck_database_name }}"
+    line="dataSource.url=jdbc:mysql://{{ rundeck_database_host }}:{{ rundeck_database_port }}/{{ rundeck_database_name }}?autoReconnect=true"
   notify:
     - restart rundeck
   tags:
